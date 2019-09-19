@@ -4,14 +4,15 @@
 pipeline {
    agent any
    environment {
-       first_path = get_first()
+       first_path = env.JOB_NAME
    }
    stages {
        stage('example') {
             //agent { label 'master' }
             steps {
-               echo 'Building..'
-                //print(env.first_path)
+               echo 'SCM Checkout..'
+               git 'https://github.com/AnishAnil/Jenkins_hook1.git'
+                print(env.first_path)
             }
         }
     }
