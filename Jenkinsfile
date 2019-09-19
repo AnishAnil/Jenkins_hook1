@@ -8,7 +8,7 @@ pipeline {
    }
    stages {
        stage('example') {
-            agent { label 'master' }
+            //agent { label 'master' }
             steps {
                 print(env.first_path)
             }
